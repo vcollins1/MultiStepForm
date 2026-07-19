@@ -1,0 +1,32 @@
+.indicator {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.indicator__display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33px;
+    height: 33px;
+    border: 1px solid #fff;
+    border-radius: 100%;
+}
+
+.indicator__text {
+    display: none;
+}
+
+.indicator__text span:first-child {
+    color: #ABBCFF;
+}
+
+@media (min-width: 950px) {
+    .indicator__text {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+}

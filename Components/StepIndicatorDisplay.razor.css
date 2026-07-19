@@ -1,0 +1,33 @@
+.steps {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    justify-content: center;
+    padding-top: 32px;
+    transition: 0.2s;
+}
+
+@media (min-width: 950px) {
+    .steps {
+        justify-content: flex-start;
+        padding: 40px 32px;
+    }
+}
+
+.steps__background {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.steps__indicators {
+    display: flex;
+    gap: 16px;
+}
+
+@media (min-width: 950px) {
+    .steps__indicators {
+        flex-direction: column;
+        gap: 32px;
+    }
+}

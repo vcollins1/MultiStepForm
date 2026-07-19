@@ -1,0 +1,17 @@
+<div class="steps">
+    <picture class="steps__background">
+        <source media="(min-width:950px)" srcset="images/bg-sidebar-desktop.svg" width="274px"/>
+        <img src="/images/bg-sidebar-mobile.svg" alt="bg-image" object-fit="cover" width="100%">
+    </picture>
+    
+    <div class="steps__indicators">
+        @foreach (var (stepCount, step) in _steps.Select((data, index) => (index + 1, data)))
+        {
+            <StepIndicator Step="@stepCount" Text="@step" />
+        }
+    </div>
+</div>
+
+@code {
+    private readonly string[] _steps = ["YOUR INFO", "SELECT PLAN", "ADD-ONS", "SUMMARY"];
+}

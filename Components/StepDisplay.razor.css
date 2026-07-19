@@ -1,0 +1,7 @@
+.multi-step__display {
+    max-width: min(450px, calc(100% - 1rem));
+    padding: 32px 24px;
+    background: #fff;
+    height: 300px;
+    margin-inline: auto;
+}

@@ -1,0 +1,12 @@
+<div class="indicator">
+    <span class="indicator__display">@Step</span>
+    <div class="indicator__text">
+        <span>STEP @Step</span>
+        <span>@Text</span>
+    </div>
+</div>
+
+@code {
+    [Parameter] public int Step { get; set; }
+    [Parameter] public string Text { get; set; } = "";
+}
