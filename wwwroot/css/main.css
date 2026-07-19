@@ -9,18 +9,34 @@ body {
     height: 100vh;
 }
 
-@media screen and (min-width: 940px) {
+.main-section {
+    position: relative;
+    max-width: min(700px, calc(100% - 1rem));
+    margin-inline: auto;
+    height: 100%;
+}
+
+@media screen and (min-width: 950px) {
     body {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    
+
     .multi-step {
         display: flex;
         padding: 16px;
         background-color: #fff;
         width: 940px;
+        height: 600px;
         border-radius: 15px;
+    }
+
+    .main-section {
+        flex-grow: 1;
+        padding: 0 84px 0 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 }

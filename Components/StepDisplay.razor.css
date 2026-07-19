@@ -1,11 +1,17 @@
 .multi-step__display {
     position: relative;
-    max-width: min(450px, calc(100% - 1rem));
     padding: 32px 24px;
     background: #fff;
     height: 300px;
-    margin-inline: auto;
     z-index: 2;
     border-radius: 10px;
-    margin-top: clamp(34px, calc(-134px + 44.78vw), 287px);
+    margin-top: clamp(34px, calc(-63px + 25.84vw), 180px);
+}
+
+@media screen and (min-width: 950px) {
+    .multi-step__display {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
 }

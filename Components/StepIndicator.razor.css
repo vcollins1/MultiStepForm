@@ -28,7 +28,7 @@
     color: #ABBCFF;
 }
 
-@media (min-width: 950px) {
+@media screen and (min-width: 950px) {
     .indicator__text {
         display: flex;
         flex-direction: column;
