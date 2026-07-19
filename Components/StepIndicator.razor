@@ -1,4 +1,4 @@
-<div class="indicator">
+<div class="indicator @(Selected ? "indicator--selected" : "")">
     <span class="indicator__display">@Step</span>
     <div class="indicator__text">
         <span>STEP @Step</span>
@@ -9,4 +9,5 @@
 @code {
     [Parameter] public int Step { get; set; }
     [Parameter] public string Text { get; set; } = "";
+    [Parameter] public bool Selected { get; set; }
 }

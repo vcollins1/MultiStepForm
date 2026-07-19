@@ -7,11 +7,12 @@
     <div class="steps__indicators">
         @foreach (var (stepCount, step) in _steps.Select((data, index) => (index + 1, data)))
         {
-            <StepIndicator Step="@stepCount" Text="@step" />
+            <StepIndicator Step="@stepCount" Text="@step.Step" Selected="@step.Select"/>
         }
     </div>
 </div>
 
 @code {
-    private readonly string[] _steps = ["YOUR INFO", "SELECT PLAN", "ADD-ONS", "SUMMARY"];
+    private readonly (string Step, bool Select)[] _steps = 
+        [("YOUR INFO", true), ("SELECT PLAN", false), ("ADD-ONS", false), ("SUMMARY", false)];
 }

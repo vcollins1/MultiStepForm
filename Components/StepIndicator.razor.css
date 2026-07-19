@@ -5,6 +5,11 @@
     gap: 16px;
 }
 
+.indicator--selected .indicator__display {
+    background: #BEE2FD;
+    color: #022959;
+}
+
 .indicator__display {
     display: flex;
     justify-content: center;
