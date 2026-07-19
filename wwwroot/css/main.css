@@ -6,4 +6,21 @@
 body {
     background: #EFF5FF;
     font-family: "Ubuntu", sans-serif;
+    height: 100vh;
+}
+
+@media screen and (min-width: 940px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .multi-step {
+        display: flex;
+        padding: 16px;
+        background-color: #fff;
+        width: 940px;
+        border-radius: 15px;
+    }
 }

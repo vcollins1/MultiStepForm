@@ -11,6 +11,8 @@
     .steps {
         justify-content: flex-start;
         padding: 40px 32px;
+        width: 274px;
+        height: 568px;
     }
 }
 
