@@ -31,6 +31,9 @@
     &:hover {
         color: #022959;
     }
+    &.hide {
+        visibility: hidden;
+    }
 }
 
 .btn--next {

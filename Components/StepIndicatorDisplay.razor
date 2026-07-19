@@ -5,14 +5,14 @@
     </picture>
     
     <div class="steps__indicators">
-        @foreach (var (stepCount, step) in _steps.Select((data, index) => (index + 1, data)))
+        @foreach (var (stepCount, step) in Steps.Select((data, index) => (index + 1, data)))
         {
-            <StepIndicator Step="@stepCount" Text="@step.Step" Selected="@step.Select"/>
+            <StepIndicator Step="@stepCount" Text="@step" Selected="@(CurrentStep == stepCount)"/>
         }
     </div>
 </div>
 
 @code {
-    private readonly (string Step, bool Select)[] _steps = 
-        [("YOUR INFO", true), ("SELECT PLAN", false), ("ADD-ONS", false), ("SUMMARY", false)];
+    [Parameter] public string[] Steps { get; set; }
+    [Parameter] public int CurrentStep { get; set; }
 }
