@@ -5,7 +5,7 @@
     </picture>
     
     <div class="steps__indicators">
-        @foreach (var (stepCount, step) in Steps.Select((data, index) => (index + 1, data)))
+        @foreach (var (stepCount, step) in StepsData.Steps.Select((data, index) => (index + 1, data)))
         {
             <StepIndicator Step="@stepCount" Text="@step" Selected="@(CurrentStep == stepCount)"/>
         }
@@ -13,6 +13,5 @@
 </div>
 
 @code {
-    [Parameter] public string[] Steps { get; set; }
     [Parameter] public int CurrentStep { get; set; }
 }

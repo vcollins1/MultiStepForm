@@ -4,7 +4,7 @@
 />
 
 <div class="plan-cards">
-    @foreach (var plan in _plans)
+    @foreach (var plan in StepsData.Plans)
     {
         <PlanCard 
             Title="@plan.Title" 
@@ -18,11 +18,6 @@
 
 @code 
 {
-    private readonly (int Id, string Title, decimal Price, string Icon)[] _plans = [
-        (1, "Arcade", 9, "/images/icon-arcade.svg"),
-        (2, "Advanced", 12, "/images/icon-advanced.svg"),
-        (3, "Pro", 15, "/images/icon-pro.svg")
-    ];
     [Parameter] public int SelectedCardId { get; set; }
     [Parameter] public EventCallback<int> SelectedCardIdChanged { get; set; }
 

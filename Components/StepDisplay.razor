@@ -6,13 +6,15 @@
     }
     else if (CurrentStep == 1)
     {
-        <SelectPlanDisplay />
+        <SelectPlanDisplay @bind-SelectedCardId="_selectedPlanId" />
     }
     
 </div>
 
 @code
 {
+    private int _selectedPlanId;
+
     [Parameter] public int CurrentStep { get; set; }
     [Parameter] public EventCallback OnValidSubmit { get; set; }
 }

@@ -3,7 +3,7 @@
 <PageTitle>MultiStep Form</PageTitle>
 
 <main class="multi-step">
-    <StepIndicatorDisplay Steps="@_steps" CurrentStep="@(_currentStepIndex + 1)" />
+    <StepIndicatorDisplay CurrentStep="@(_currentStepIndex + 1)" />
     <section class="main-section">
         <StepDisplay CurrentStep="_currentStepIndex" OnValidSubmit="@NextDisplay" />
         <StepDisplayControls
@@ -16,13 +16,11 @@
 
 @code 
 {
-    private readonly string[] _steps = ["YOUR INFO", "SELECT PLAN", "ADD-ONS", "SUMMARY"];
-
     private int _currentStepIndex = 1;
 
     private void NextDisplay()
     {
-        _currentStepIndex = Math.Min(_steps.Length - 1, _currentStepIndex + 1);
+        _currentStepIndex = Math.Min(StepsData.Steps.Length - 1, _currentStepIndex + 1);
     }
 
     private void PreviousDisplay()
