@@ -1,6 +1,13 @@
 <div class="display-controls">
     <button class="btn btn--back @(CurrentStep == 0 ? "hide" : "")" @onclick="OnBack">Go Back</button>
-    <button class="btn btn--next" @onclick="OnNext">Next Step</button>
+    @if (CurrentStep == 0)
+    {
+        <button class="btn btn--next" type="submit" form="personal-info-form">Next Step</button>
+    }
+    else
+    {
+        <button class="btn btn--next" type="button" @onclick="OnNext">Next Step</button>
+    }
 </div>
 
 @code {

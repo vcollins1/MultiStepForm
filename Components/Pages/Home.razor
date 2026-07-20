@@ -5,7 +5,7 @@
 <main class="multi-step">
     <StepIndicatorDisplay Steps="@_steps" CurrentStep="@(_currentStepIndex + 1)" />
     <section class="main-section">
-        <StepDisplay />
+        <StepDisplay CurrentStep="_currentStepIndex" OnValidSubmit="@NextDisplay" />
         <StepDisplayControls
             OnNext="@NextDisplay"
             OnBack="@PreviousDisplay"

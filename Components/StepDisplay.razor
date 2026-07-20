@@ -1,7 +1,10 @@
 
 <div class="multi-step__display">
-    
+    <PersonalInfoDisplay CurrentStep="CurrentStep" OnValidSubmit="OnValidSubmit" />
 </div>
-@code {
-    
+
+@code
+{
+    [Parameter] public int CurrentStep { get; set; }
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
 }

@@ -1,0 +1,56 @@
+@using System.ComponentModel.DataAnnotations
+<div class="personal-info @(CurrentStep != 0 ? "hide" : "")">
+    <h2 class="personal-info__title">Personal Info</h2>
+    <p class="personal-info__description">Please provide your name, email address, and phone number.</p>
+
+    <EditForm id="personal-info-form" class="personal-info__data" Model="@_personalInfoModel" OnValidSubmit="@HandleValidSubmit">
+        <DataAnnotationsValidator />
+
+        <div class="personal-info__input">
+            <label>
+                Name:
+                <ValidationMessage For="@(() => _personalInfoModel.Name)" />
+            </label>
+            <InputText @bind-Value="@_personalInfoModel.Name" />
+        </div>
+
+        <div class="personal-info__input">
+            <label>
+                Email Address:
+                <ValidationMessage For="@(() => _personalInfoModel.EmailAddress)" />
+            </label>
+            <InputText @bind-Value="@_personalInfoModel.EmailAddress" />
+        </div>
+    
+        <div class="personal-info__input">
+            <label>
+                Phone Number:
+                <ValidationMessage For="@(() => _personalInfoModel.PhoneNumber)" />
+            </label>
+            <InputText @bind-Value="@_personalInfoModel.PhoneNumber" />
+        </div>
+    </EditForm>
+</div>
+
+@code {
+    private PersonalInfoModel _personalInfoModel = new PersonalInfoModel();
+    [Parameter] public int CurrentStep { get; set; }
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+
+    private async Task HandleValidSubmit()
+    {
+        await OnValidSubmit.InvokeAsync();
+    }
+
+    public class PersonalInfoModel
+    {
+        [Required(ErrorMessage = "This field is required")]
+        public string? Name { get; set; }
+
+        [Required(ErrorMessage = "This field is required")]
+        public string? EmailAddress { get; set; }
+
+        [Required(ErrorMessage = "This field is required")]
+        public string? PhoneNumber { get; set; }
+    }
+}
