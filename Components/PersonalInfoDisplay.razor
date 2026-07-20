@@ -11,7 +11,7 @@
                 Name:
                 <ValidationMessage For="@(() => _personalInfoModel.Name)" />
             </label>
-            <InputText @bind-Value="@_personalInfoModel.Name" />
+            <InputText class="personal-info__text-input" @bind-Value="@_personalInfoModel.Name" placeholder="e.g. Stephen King"/>
         </div>
 
         <div class="personal-info__input">
@@ -19,7 +19,7 @@
                 Email Address:
                 <ValidationMessage For="@(() => _personalInfoModel.EmailAddress)" />
             </label>
-            <InputText @bind-Value="@_personalInfoModel.EmailAddress" />
+            <InputText class="personal-info__text-input" @bind-Value="@_personalInfoModel.EmailAddress" placeholder="e.g. stephenking@lorem.com"/>
         </div>
     
         <div class="personal-info__input">
@@ -27,7 +27,7 @@
                 Phone Number:
                 <ValidationMessage For="@(() => _personalInfoModel.PhoneNumber)" />
             </label>
-            <InputText @bind-Value="@_personalInfoModel.PhoneNumber" />
+            <InputText class="personal-info__text-input" @bind-Value="@_personalInfoModel.PhoneNumber" placeholder="e.g. 234-567-8909"/>
         </div>
     </EditForm>
 </div>

@@ -8,6 +8,14 @@ body {
     height: 100vh;
 }
 
+.personal-info__text-input {
+    padding: 12px 16px;
+    border: 1px solid #D6D9E6;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #9699AA;
+}
+
 .main-section {
     position: relative;
     max-width: min(700px, calc(100% - 1rem));
