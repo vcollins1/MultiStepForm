@@ -1,0 +1,10 @@
+.display-header__title {
+    margin: 40px 0 11px;
+    color: #022959;
+    font-size: clamp(1.5rem, calc(19px + 1.42vw), 2rem);
+}
+
+.display-header__description {
+    margin-bottom: 35px;
+    color: #9699AA;
+}

@@ -1,8 +1,6 @@
 @using System.ComponentModel.DataAnnotations
+<DisplayHeader Title="Personal Info" Description="Please provide your name, email address, and phone number."/>
 <div class="personal-info @(CurrentStep != 0 ? "hide" : "")">
-    <h2 class="personal-info__title">Personal Info</h2>
-    <p class="personal-info__description">Please provide your name, email address, and phone number.</p>
-
     <EditForm id="personal-info-form" class="personal-info__data" Model="@_personalInfoModel" OnValidSubmit="@HandleValidSubmit">
         <DataAnnotationsValidator />
 
