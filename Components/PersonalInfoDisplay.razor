@@ -1,6 +1,6 @@
 @using System.ComponentModel.DataAnnotations
 <DisplayHeader Title="Personal Info" Description="Please provide your name, email address, and phone number."/>
-<div class="personal-info @(CurrentStep != 0 ? "hide" : "")">
+<div class="personal-info">
     <EditForm id="personal-info-form" class="personal-info__data" Model="@_personalInfoModel" OnValidSubmit="@HandleValidSubmit">
         <DataAnnotationsValidator />
 
@@ -32,7 +32,6 @@
 
 @code {
     private PersonalInfoModel _personalInfoModel = new PersonalInfoModel();
-    [Parameter] public int CurrentStep { get; set; }
     [Parameter] public EventCallback OnValidSubmit { get; set; }
 
     private async Task HandleValidSubmit()
