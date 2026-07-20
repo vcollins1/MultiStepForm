@@ -1,0 +1,16 @@
+<div class="plan-card selected @(IsSelected ? "selected" : "")" @onclick="OnClicked">
+    <img src="@Icon" alt="@Title card">
+    <section class="plan-card__data">
+        <h2>@Title</h2>
+        <span>$@Price/mo</span>
+    </section>
+</div>
+
+@code 
+{
+    [Parameter] public string Title { get; set; } = "";
+    [Parameter] public string Icon { get; set; } = "";
+    [Parameter] public decimal Price { get; set; }
+    [Parameter] public bool IsSelected { get; set; }
+    [Parameter] public EventCallback OnClicked { get; set; }
+}

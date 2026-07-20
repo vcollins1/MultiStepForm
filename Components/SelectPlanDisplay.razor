@@ -1,0 +1,33 @@
+<DisplayHeader
+    Title="Select your plan"
+    Description="You have the option of monthly or yearly billing."
+/>
+
+<div class="plan-cards">
+    @foreach (var plan in _plans)
+    {
+        <PlanCard 
+            Title="@plan.Title" 
+            Icon="@plan.Icon" 
+            Price="@plan.Price"
+            OnClicked="@(() => SelectCardId(plan.Id))"
+            IsSelected="@(SelectedCardId == plan.Id)"
+        />
+    }
+</div>
+
+@code 
+{
+    private readonly (int Id, string Title, decimal Price, string Icon)[] _plans = [
+        (1, "Arcade", 9, "/images/icon-arcade.svg"),
+        (2, "Advanced", 12, "/images/icon-advanced.svg"),
+        (3, "Pro", 15, "/images/icon-pro.svg")
+    ];
+    [Parameter] public int SelectedCardId { get; set; }
+    [Parameter] public EventCallback<int> SelectedCardIdChanged { get; set; }
+
+    private async Task SelectCardId(int id)
+    {
+        await SelectedCardIdChanged.InvokeAsync(id);
+    }
+}

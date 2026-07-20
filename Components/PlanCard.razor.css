@@ -1,0 +1,24 @@
+.plan-card {
+    display: flex;
+    gap: 14px;
+    padding: 16px;
+    border: 1px solid #D6D9E6;
+    border-radius: 8px;
+    
+    &:hover {
+        cursor: pointer;
+        border-color: #483EFF;
+    }
+    
+    &.selected {
+        background-color: #F8F9FF;
+    }
+}
+
+.plan-card__data h2 {
+    color: #022959;
+}
+
+.plan-card__data span {
+    color: #9699AA;
+}

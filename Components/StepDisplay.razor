@@ -1,6 +1,14 @@
 
 <div class="multi-step__display">
-    <PersonalInfoDisplay CurrentStep="CurrentStep" OnValidSubmit="OnValidSubmit" />
+    @if (CurrentStep == 0)
+    {
+        <PersonalInfoDisplay OnValidSubmit="OnValidSubmit"/>
+    }
+    else if (CurrentStep == 1)
+    {
+        <SelectPlanDisplay />
+    }
+    
 </div>
 
 @code
