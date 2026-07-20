@@ -1,16 +1,21 @@
-.display-controls {
-    display: flex;
-    justify-content: space-between;
+.controls-container {
+    background-color: #fff;
     position: fixed;
     bottom: 0;
     inset-inline: 0;
+    z-index: 3;
+    padding: 16px;
+}
+
+.display-controls {
+    display: flex;
+    justify-content: space-between;
     width: min(700px, calc(100% - 1rem));
     margin-inline: auto;
-    z-index: 3;
 }
 
 @media screen and (min-width: 950px) {
-    .display-controls {
+    .controls-container {
         position: static;
         width: 100%;
         margin-inline: 0;
