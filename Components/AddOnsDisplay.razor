@@ -1,0 +1,20 @@
+<DisplayHeader
+    Title="Pick add-ons"
+    Description="Add-ons help enhance your gaming experience."
+/>
+
+<div class="add-ons">
+    @foreach (var addOn in StepsData.AddOns)
+    {
+        <AddOn
+            Title="@addOn.Title"
+            Description="@addOn.Description"
+            Price="@addOn.Price"
+        />
+    }
+</div>
+
+@code 
+{
+    
+}

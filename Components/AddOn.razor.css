@@ -1,0 +1,36 @@
+.add-on {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #D6D9E6;
+    padding: 20px;
+    border-radius: 8px;
+    
+    &:has(input[type="checkbox"]:checked) {
+        background-color: #F8F9FF;
+        border-color: #483EFF;
+    }
+}
+
+.add-on__label {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.add-on__text {
+    display: grid;
+    gap: 7px;
+}
+
+.add-on__text--title {
+    color: #022959;
+}
+
+.add-on__text--description {
+    color: #9699AA;
+    font-size: 14px;
+}
+
+.add-on__price {
+    color: #483EFF;
+}
