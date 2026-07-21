@@ -5,11 +5,16 @@
     border: 1px solid #D6D9E6;
     padding: 20px;
     border-radius: 8px;
-    
-    &:has(input[type="checkbox"]:checked) {
-        background-color: #F8F9FF;
-        border-color: #483EFF;
-    }
+}
+
+.add-on:hover {
+    border-color: #483EFF;
+    cursor: pointer;
+}
+
+.add-on:has(input[type="checkbox"]:checked) {
+    background-color: #F8F9FF;
+    border-color: #483EFF;
 }
 
 .add-on__label {

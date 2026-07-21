@@ -10,11 +10,30 @@
             Title="@addOn.Title"
             Description="@addOn.Description"
             Price="@addOn.Price"
+            IsChecked="@SelectedAddOnIds.Contains(addOn.Id)"
+            IsCheckedChanged="@(isChecked => SetAddOnChecked(addOn.Id, isChecked))"
         />
     }
 </div>
 
 @code 
 {
-    
+    [Parameter] public HashSet<int> SelectedAddOnIds { get; set; } = [];
+    [Parameter] public EventCallback<HashSet<int>> SelectedAddOnIdsChanged { get; set; }
+
+    private Task SetAddOnChecked(int id, bool isChecked)
+    {
+        var updatedIds = new HashSet<int>(SelectedAddOnIds);
+
+        if (isChecked)
+        {
+            updatedIds.Add(id);
+        }
+        else
+        {
+            updatedIds.Remove(id);
+        }
+
+        return SelectedAddOnIdsChanged.InvokeAsync(updatedIds);
+    }
 }

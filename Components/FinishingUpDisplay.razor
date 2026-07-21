@@ -1,0 +1,9 @@
+@foreach (var s in Selected)
+{
+    <h1>@s</h1>
+}
+
+@code 
+{
+    [Parameter] public HashSet<int> Selected { get; set; }
+}

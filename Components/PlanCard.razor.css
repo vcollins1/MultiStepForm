@@ -4,16 +4,16 @@
     padding: 16px;
     border: 1px solid #D6D9E6;
     border-radius: 8px;
-    
-    &:hover {
-        cursor: pointer;
-        border-color: #483EFF;
-    }
-    
-    &.selected {
-        background-color: #F8F9FF;
-        border-color: #483EFF;
-    }
+}
+
+.plan-card:hover {
+    cursor: pointer;
+    border-color: #483EFF;
+}
+
+.plan-card.selected {
+    background-color: #F8F9FF;
+    border-color: #483EFF;
 }
 
 .plan-card__data h2 {

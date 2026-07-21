@@ -1,18 +1,27 @@
 <div class="add-on">
     <label class="add-on__label">
-        <input type="checkbox"/>
+        <input type="checkbox" checked="@IsChecked" @onchange="HandleCheckedChanged" />
         <span class="add-on__text">
             <span class="add-on__text--title">@Title</span>
             <span class="add-on__text--description">@Description</span>
         </span>
-    </label>
+    </label> 
     
     <span class="add-on__price">+$@Price/mo</span>
 </div>
 
 @code 
 {
+    [Parameter] public int Id { get; set; }
     [Parameter] public string Title { get; set; } = "";
     [Parameter] public string Description { get; set; } = "";
     [Parameter] public decimal Price { get; set; }
+    [Parameter] public bool IsChecked { get; set; }
+    [Parameter] public EventCallback<bool> IsCheckedChanged { get; set; }
+
+    private Task HandleCheckedChanged(ChangeEventArgs eventArgs)
+    {
+        var isChecked = eventArgs.Value is true;
+        return IsCheckedChanged.InvokeAsync(isChecked);
+    }
 }
