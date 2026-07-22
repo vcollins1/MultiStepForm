@@ -23,6 +23,24 @@ body {
     height: 100%;
 }
 
+.thanks {
+    margin: clamp(79px, calc(11px + 18.1vw), 181px) auto 79px;
+    text-align: center;
+}
+
+.thanks h3 {
+    font-size: 32px;
+    color: #022959;
+    margin: 32px 0 14px;
+}
+
+.thanks p {
+   width: 100%;
+    text-align: center;
+    color: #9699AA;
+    line-height: 1.6;
+}
+
 @media screen and (min-width: 950px) {
     body {
         display: flex;
@@ -41,7 +59,7 @@ body {
 
     .main-section {
         flex-grow: 1;
-        padding: 0 84px 0 100px;
+        margin: 0 84px 0 100px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;

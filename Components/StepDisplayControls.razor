@@ -1,4 +1,4 @@
-<div class="controls-container">
+<div class="controls-container @(CurrentStep >= 4 ? "hide" : "")">
     <div class="display-controls">
         <button class="btn btn--back @(CurrentStep == 0 ? "hide" : "")" @onclick="OnBack">Go Back</button>
         @if (CurrentStep == 0)

@@ -7,7 +7,8 @@
     <div class="steps__indicators">
         @foreach (var (stepCount, step) in StepsData.Steps.Select((data, index) => (index + 1, data)))
         {
-            <StepIndicator Step="@stepCount" Text="@step" Selected="@(CurrentStep == stepCount)"/>
+            <StepIndicator Step="@stepCount" Text="@step" 
+                           Selected="@(CurrentStep == stepCount)"/>
         }
     </div>
 </div>

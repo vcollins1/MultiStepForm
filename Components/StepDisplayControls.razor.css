@@ -7,6 +7,10 @@
     padding: 16px;
 }
 
+.controls-container.hide {
+    display: none;
+}
+
 .display-controls {
     display: flex;
     justify-content: space-between;
