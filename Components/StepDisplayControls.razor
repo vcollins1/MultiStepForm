@@ -7,7 +7,9 @@
         }
         else
         {
-            <button class="btn btn--next" type="button" @onclick="OnNext">Next Step</button>
+            <button class="btn btn--next @(CurrentStep == 3 ? "confirm" : "")" type="button" @onclick="OnNext">
+                @(CurrentStep == 3 ? "Confirm" : "Next Step")
+            </button>
         }
     </div>
 </div>

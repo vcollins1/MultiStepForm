@@ -12,6 +12,10 @@
     {
         <AddOnsDisplay @bind-SelectedAddOnIds="_selectedAddOnIds" />
     }
+    else if (CurrentStep == 3)
+    {
+        <FinishingUpDisplay SelectedPlan="_selectedPlanId" SelectedAddOns="_selectedAddOnIds" />
+    }
     
 </div>
 

@@ -1,0 +1,49 @@
+.purchase-summary {
+    padding: 24px;
+    background-color: #F8F9FF;
+    border-radius: 8px;
+    color: #9699AA;
+}
+
+.selected-plan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #979797;
+}
+
+.selected-plan__data {
+    display: grid;
+    gap: 7px;
+}
+
+.selected-add-ons {
+    padding-top: 16px;
+    display: grid;
+    gap: 16px;
+}
+
+.selected-add-on {
+    display: flex;
+    justify-content: space-between;
+}
+
+.price {
+    color: #022959;
+}
+
+.selected-add-on__price {
+    font-size: 14px;
+}
+
+.total {
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.total__price {
+    color: #483EFF;
+    font-size: 20px;
+}

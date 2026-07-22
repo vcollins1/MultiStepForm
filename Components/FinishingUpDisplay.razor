@@ -1,9 +1,65 @@
-@foreach (var s in Selected)
-{
-    <h1>@s</h1>
-}
+<DisplayHeader Title="Finishing up" Description="Double-check everything looks OK before confirming." />
+
+<div class="purchase-summary">
+    @if (TryGetSelectedPlan(out var selectedPlan))
+    {
+        <section class="selected-plan">
+            <div class="selected-plan__data">
+                <span>@selectedPlan.Title</span>
+                <span><a href="#">Change</a></span>
+            </div>
+
+            <span class="price">$@selectedPlan.Price/mo</span>
+        </section>
+    }
+    else
+    {
+        <p>Please select a plan.</p>
+    }
+
+    <section class="selected-add-ons">
+        @foreach (var addOn in SelectedAddOnDetails)
+        {
+            <div class="selected-add-on">
+                <span>@addOn.Title</span>
+                <span class="price selected-add-on__price">+$@addOn.Price/mo</span>
+            </div>
+        }
+    </section>
+</div>
+
+<section class="total">
+    <span>Total (per month)</span>
+    <span class="total__price">$@Total/mo</span>
+</section>
+
 
 @code 
 {
-    [Parameter] public HashSet<int> Selected { get; set; }
+    [Parameter] public int SelectedPlan { get; set; }
+    [Parameter] public HashSet<int> SelectedAddOns { get; set; } = [];
+
+    private IEnumerable<(int Id, string Title, string Description, decimal Price)> SelectedAddOnDetails =>
+        StepsData.AddOns.Where(addOn => SelectedAddOns.Contains(addOn.Id));
+
+    private decimal Total =>
+        StepsData.Plans
+            .Where(plan => plan.Id == SelectedPlan)
+            .Sum(plan => plan.Price)
+        + SelectedAddOnDetails.Sum(addOn => addOn.Price);
+
+    private bool TryGetSelectedPlan(out (int Id, string Title, decimal Price, string Icon) selectedPlan)
+    {
+        foreach (var plan in StepsData.Plans)
+        {
+            if (plan.Id == SelectedPlan)
+            {
+                selectedPlan = plan;
+                return true;
+            }
+        }
+
+        selectedPlan = default;
+        return false;
+    }
 }
