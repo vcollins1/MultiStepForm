@@ -24,7 +24,7 @@ body {
 }
 
 .thanks {
-    margin: clamp(79px, calc(11px + 18.1vw), 181px) auto 79px;
+    margin: calc(clamp(79px, calc(11px + 18.1vw), 181px) - 16px) auto 79px;
     text-align: center;
 }
 

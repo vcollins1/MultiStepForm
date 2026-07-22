@@ -2,3 +2,10 @@
     display: grid;
     gap: 12px;
 }
+
+@media screen and (min-width: 730px) {
+    .plan-cards {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-rows: 160px;
+    }
+}
