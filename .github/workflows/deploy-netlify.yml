@@ -2,7 +2,7 @@ name: Deploy MultiForm to Netlify
 
 on: 
   push: 
-    brenches: 
+    branches: 
       - main
   workflow_dispatch:
     
